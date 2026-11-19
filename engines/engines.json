@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "note": "引擎清单。由 tools/sync_engines.py 生成，也可手改；config/launcher.json 的 engines 段为准。",
+  "engines": {
+    "4.6": {
+      "path": "",
+      "exists": true,
+      "bytes": 171924488,
+      "version": "4.6.stable.official.89cea1439",
+      "kind": "editor",
+      "pack_version": 3,
+      "note": ""
+    },
+    "4.7": {
+      "path": "",
+      "exists": true,
+      "bytes": 109268480,
+      "version": "4.7.2.stable.official.ed1daf0bf",
+      "kind": "template",
+      "pack_version": 4,
+      "note": ""
+    }
+  }
+}

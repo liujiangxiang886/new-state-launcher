@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "id": "jjxf.v1.45",
+  "label": "机甲旋风 1.45（原版 · Godot 4.6）",
+  "kind": "exe",
+  "engine_line": "4.6",
+  "path": "D:\\迅雷2盘\\机甲旋风·重生6.11\\1.2\\mchGame1019-v1.45-last\\mchGame.exe",
+  "size": 3282132348,
+  "sha256": "",
+  "header": {
+    "pack_version": 3,
+    "engine": "4.6.0",
+    "engine_line": "4.6",
+    "pack_flags": 2,
+    "dir_encrypted": false,
+    "file_base": 112,
+    "dir_offset": 3140677590,
+    "pck_start": 104599040,
+    "pck_size": 3177533296,
+    "header_size": 112
+  },
+  "entry_count": 380619,
+  "total_entry_bytes": 3137883699,
+  "encrypted_entries": 0,
+  "top_suffixes": [
+    [
+      ".import",
+      189377
+    ],
+    [
+      ".ctex",
+      188297
+    ],
+    [
+      ".json",
+      1189
+    ],
+    [
+      ".mp3str",
+      1075
+    ],
+    [
+      ".remap",
+      226
+    ],
+    [
+      ".ogv",
+      209
+    ],
+    [
+      ".scn",
+      114
+    ],
+    [
+      ".gdc",
+      109
+    ],
+    [
+      ".gdshader",
+      10
+    ],
+    [
+      ".fontdata",
+      5
+    ],
+    [
+      ".res",
+      3
+    ],
+    [
+      ".cfg",
+      1
+    ]
+  ],
+  "index_file": "index-1.45.json.gz",
+  "index_sha256": "c121ff6f28db887037ec1a8fe4c78e6502049033c3d4d9d90a2aac88a5ea45f1",
+  "produced_at": "2026-11-07T14:58:20+00:00"
+}

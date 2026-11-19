@@ -1,0 +1,231 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jjxf.local/schemas/extension.v2.schema.json",
+  "title": "机甲旋风扩展/剧情协议 v2",
+  "type": "object",
+  "required": ["schema", "id", "name", "version", "kind"],
+  "properties": {
+    "schema": { "const": 2, "description": "协议版本，v2 为 2；v1 包由 schema1_map.json 无损升格" },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{1,63}$",
+      "description": "全局唯一标识，小写字母数字与 . _ -"
+    },
+    "name": { "type": "string", "minLength": 1 },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+([.-][0-9A-Za-z.-]+)?$",
+      "description": "语义化版本 x.y.z"
+    },
+    "kind": {
+      "enum": ["extension", "minigame", "theme", "framework"],
+      "description": "决定加载波次：framework → extension → theme"
+    },
+    "engine": {
+      "type": "object",
+      "properties": {
+        "line": { "enum": ["4.6"] },
+        "min": { "type": "string" },
+        "max": { "type": "string" }
+      },
+      "description": "可选的引擎约束；line 与 baseline.engine.line 二选一"
+    },
+    "baseline": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "如 jjxf.v1.45" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "engine": {
+          "type": "object",
+          "properties": { "line": { "enum": ["4.6"] } }
+        }
+      }
+    },
+    "framework": {
+      "type": "string",
+      "description": "要求的框架版本范围，如 >=0.1.4,<0.2.0；不满足应警告而非拒装"
+    },
+    "priority": { "type": "integer", "minimum": 0, "maximum": 100, "default": 50 },
+    "author": { "type": "string" },
+    "license": { "type": "string" },
+    "requires": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "type": "string" },
+          {
+            "type": "object",
+            "required": ["id"],
+            "properties": {
+              "id": { "type": "string" },
+              "version": { "type": "string" }
+            }
+          }
+        ]
+      }
+    },
+    "conflicts": { "type": "array", "items": { "type": "string" } },
+    "load_after": { "type": "array", "items": { "type": "string" } },
+    "load_before": { "type": "array", "items": { "type": "string" } },
+    "claims": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "声明改哪些路径/JSON Pointer；重叠会被冲突检测拦下"
+    },
+    "capabilities": { "type": "array", "items": { "type": "string" } },
+
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "target"],
+        "properties": {
+          "source": { "type": "string", "description": "包内路径" },
+          "target": { "type": "string", "description": "游戏内路径（不带 res://）" },
+          "replace": { "type": "boolean", "default": true },
+          "mode": { "enum": ["copy", "patch"] },
+          "expect": {
+            "type": "object",
+            "properties": {
+              "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+              "size": { "type": "integer", "minimum": 0 }
+            }
+          }
+        }
+      }
+    },
+
+    "packs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path"],
+        "properties": {
+          "path": { "type": "string" },
+          "mount_order": { "type": "integer" },
+          "engine": { "enum": ["4.6"] },
+          "offset": { "type": "integer", "minimum": 0 },
+          "role": { "type": "string" }
+        }
+      }
+    },
+
+    "data_patches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["target", "ops"],
+        "properties": {
+          "target": { "type": "string" },
+          "ops": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["op"],
+              "properties": {
+                "op": {
+                  "enum": ["add", "remove", "replace", "move", "copy", "test", "merge", "set"],
+                  "description": "RFC 6902 子集 + merge（merge-patch）；set 等价 replace"
+                },
+                "path": { "type": "string", "description": "JSON Pointer，空串表示根" },
+                "value": {},
+                "from": { "type": "string" }
+              }
+            }
+          },
+          "on_test_fail": { "enum": ["abort", "warn", "skip"], "default": "abort" }
+        }
+      }
+    },
+
+    "text_patches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["target", "find", "replace"],
+        "properties": {
+          "target": { "type": "string" },
+          "find": { "type": "string" },
+          "replace": { "type": "string" },
+          "mode": { "enum": ["literal", "regex"], "default": "literal" },
+          "expect_count": {
+            "type": "integer",
+            "minimum": 0,
+            "default": 1,
+            "description": "期望命中数；0 表示不校验。不符即按 on_test_fail 处理"
+          },
+          "expect_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "on_test_fail": { "enum": ["abort", "warn", "skip"], "default": "abort" }
+        }
+      }
+    },
+
+    "method_hooks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["target", "method", "phase"],
+        "properties": {
+          "target": { "type": "string", "description": "脚本路径，如 scripts/game.gd" },
+          "method": { "type": "string" },
+          "phase": { "enum": ["before", "after", "replace"] },
+          "handler": { "type": "string", "description": "回调名；留空由运行期注册" },
+          "async": { "type": "boolean", "default": false },
+          "priority": { "type": "integer", "default": 50 }
+        }
+      }
+    },
+
+    "scripts": {
+      "type": "object",
+      "properties": {
+        "entry": { "type": "string", "description": "运行期入口脚本路径" },
+        "members": {
+          "type": "array",
+          "items": { "type": "object" },
+          "description": "向已有脚本追加成员（schema1 的 script_members）"
+        }
+      }
+    },
+
+    "scenes": { "type": "array", "items": { "type": "string" } },
+
+    "settings": {
+      "type": "object",
+      "properties": {
+        "project": { "type": "object", "description": "写进 project.godot 的键值" },
+        "window": { "type": "object" }
+      }
+    },
+
+    "inputs": {
+      "type": "object",
+      "properties": {
+        "actions": {
+          "type": "object",
+          "description": "输入映射；必须由底座自带，挂载包里 project.binary 不生效"
+        }
+      }
+    },
+
+    "story": {
+      "type": "object",
+      "properties": {
+        "chapters": { "type": "array", "items": { "type": "object" } },
+        "dialogs": { "type": "array", "items": { "type": "object" } },
+        "missions": { "type": "array", "items": { "type": "object" } },
+        "routes": { "type": "array", "items": { "type": "object" } },
+        "movie_bridges": { "type": "array", "items": { "type": "object" } },
+        "mode": { "enum": ["merge", "replace"], "default": "merge" }
+      }
+    },
+
+    "assets": { "type": "array", "items": { "type": "object" } },
+    "minigames": { "type": "array", "items": { "type": "object" } },
+
+    "x_origin": {
+      "type": "object",
+      "description": "schema 1 升格时写入的来源信息，便于回溯"
+    }
+  }
+}

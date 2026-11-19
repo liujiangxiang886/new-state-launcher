@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jjxf.local/schemas/packset.schema.json",
+  "title": "分片索引（packset.json）",
+  "type": "object",
+  "required": ["schema", "packs"],
+  "properties": {
+    "schema": { "const": 1 },
+    "id": { "type": "string" },
+    "line": { "enum": ["4.6"] },
+    "baseline": { "type": ["string", "null"], "description": "基线 id" },
+    "pack_version": {
+      "type": "integer",
+      "description": "所有分片里最大的 pack_version。实测：内置线最高 v3，喂 v4 会被引擎拒绝"
+    },
+    "entry_count": { "type": "integer" },
+    "total_bytes": { "type": "integer" },
+    "packs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["path"],
+        "properties": {
+          "path": { "type": "string", "description": "绝对路径优先；相对路径会按 packset 所在目录解析" },
+          "offset": {
+            "type": "integer",
+            "minimum": 0,
+            "default": 0,
+            "description": "内嵌包在文件里的起点（1.45 exe 实测 104599040）"
+          },
+          "role": {
+            "enum": ["baseline", "instrumented", "mod", "story", "theme", "overlay"],
+            "description": "基线必须排在所有覆盖层之前（后挂覆盖先挂）"
+          },
+          "pack_version": { "type": "integer" },
+          "entries": { "type": "integer" },
+          "bytes": { "type": "integer" },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        }
+      }
+    }
+  }
+}

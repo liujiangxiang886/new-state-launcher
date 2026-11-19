@@ -1,0 +1,19 @@
+{
+  "schema": 3,
+  "id": "me.minimal_companion",
+  "name": "最小共存扩展 B",
+  "version": "1.0.0",
+  "kind": "extension",
+  "baseline": "jjxf.v1.45",
+  "engine": { "line": "4.6" },
+  "scope": "singleplayer",
+  "description": "最小共存包：演示 requires + load_after，且不制造位置重叠。",
+  "requires": { "me.minimal": ">=1.0.0,<2.0.0" },
+  "load_after": ["me.minimal"],
+  "files": [
+    {
+      "source": "mods/me.minimal_companion/README.md",
+      "target": "mods/me.minimal_companion/README.md"
+    }
+  ]
+}

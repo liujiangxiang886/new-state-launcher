@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "custom_line.v1.schema.json",
+  "title": "自定义版本描述 line.json（v1）",
+  "description": "由改版创作者随改版本体一起分发。启动器不采信其中的身份声明，identity_hash 必须与内置闸门对文件算出的指纹一致；capabilities/anchors 必须能在 source_index 指向的反解工程索引里逐项找到。校验通过才把该线升级为 full（可协商挂载扩展），否则降级为 probe-only。声明 method / hook 类能力还需按《自定义基线导入准则》另交可验收的反解源码（明文 .gd），否则方法钩子类扩展会被明确跳过而非静默挂载。本启动器只做单机、不支持联机接入：描述声明或扩展实现 P2P / ENet / WebSocket / UDP / TCP / DTLS 直连、自建服务端、IP:端口、NAT 穿透、局域网发现等协议的一律拒绝接入。",
+  "type": "object",
+  "required": ["schema", "name", "version", "identity", "source_index", "capabilities"],
+  "additionalProperties": true,
+  "properties": {
+    "schema": { "const": 1, "description": "描述格式版本" },
+    "name": { "type": "string", "minLength": 1 },
+    "version": { "type": "string", "minLength": 1 },
+    "publisher": { "type": "string" },
+    "note": { "type": "string" },
+    "network": {
+      "const": false,
+      "description": "本启动器只做单机；填 true 会被 line_desc.load_desc 直接拒绝。省略即视为 false。"
+    },
+    "identity": {
+      "type": "object",
+      "description": "由启动器闸门实测结果填写；填错即校验失败。",
+      "required": ["identity_hash", "engine_line", "baseline"],
+      "properties": {
+        "identity_hash": { "type": "string", "minLength": 16 },
+        "engine_line": { "type": "string", "enum": ["4.6", "4.7"] },
+        "baseline": { "type": "string", "const": "jjxf.v1.45" }
+      }
+    },
+    "source_index": {
+      "type": "string",
+      "description": "反解工程索引文件名，相对 line.json 所在目录；不得为绝对路径或 ..",
+      "minLength": 1
+    },
+    "capabilities": {
+      "type": "array",
+      "description": "本线提供给 mod 的能力。method/signal/hook 必须在反解索引里查得到；resource 表示纯资源挂载，不查代码索引。",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "kind": { "type": "string", "enum": ["method", "signal", "hook", "resource"] },
+          "target": { "type": "string", "description": "脚本路径，如 scripts/game.gd" },
+          "symbol": { "type": "string", "description": "方法/信号名；缺省取 id 最后一段" },
+          "phase": { "type": "string", "enum": ["before", "after"] }
+        }
+      }
+    },
+    "anchors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "file", "anchor"],
+        "properties": {
+          "id": { "type": "string" },
+          "file": { "type": "string" },
+          "anchor": { "type": "string" }
+        }
+      }
+    }
+  }
+}

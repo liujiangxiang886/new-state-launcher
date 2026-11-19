@@ -1,0 +1,1105 @@
+{
+  "schema": 1,
+  "id": "jjxf.v4.7",
+  "label": "机甲旋风 4.7（剧情版 · Godot 4.7.2）",
+  "kind": "pck",
+  "engine_line": "4.7",
+  "path": "",
+  "size": 3066540271,
+  "sha256": "e897b1dc56980f326463b8ce8a11daae376f2366243be27be6ea0b08ee60b74a",
+  "header": {
+    "pack_version": 4,
+    "engine": "4.7.2",
+    "engine_line": "4.7",
+    "pack_flags": 2,
+    "dir_encrypted": false,
+    "file_base": 112,
+    "dir_offset": 3029732963,
+    "pck_start": 0,
+    "pck_size": 3066540271,
+    "header_size": 112
+  },
+  "entry_count": 380259,
+  "total_entry_bytes": 2860435482,
+  "encrypted_entries": 0,
+  "top_suffixes": [
+    [
+      ".import",
+      189507
+    ],
+    [
+      ".ctex",
+      188424
+    ],
+    [
+      ".mp3str",
+      1075
+    ],
+    [
+      ".remap",
+      261
+    ],
+    [
+      ".ogv",
+      209
+    ],
+    [
+      ".json",
+      164
+    ],
+    [
+      ".gd",
+      138
+    ],
+    [
+      ".gdc",
+      138
+    ],
+    [
+      ".scn",
+      114
+    ],
+    [
+      ".tscn",
+      114
+    ],
+    [
+      ".uid",
+      81
+    ],
+    [
+      ".gdshader",
+      12
+    ]
+  ],
+  "index_file": "index-4.7.json.gz",
+  "index_sha256": "a97b9ffdfbeee6f1978afa7f33bd8cb4208af3b04eac38f2e54e3e97c7ced725",
+  "produced_at": "2026-11-07T15:04:22+00:00",
+  "layers": {
+    "body": {
+      "path": "jjxf47.pck",
+      "size": 3066540271,
+      "sha256": "e897b1dc56980f326463b8ce8a11daae376f2366243be27be6ea0b08ee60b74a"
+    },
+    "exe": {
+      "path": "jjxf47.exe",
+      "size": 109268480,
+      "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+    }
+  },
+  "code_layer": {
+    "source": "body",
+    "entry_count": 252,
+    "digest": "991901645a8fc9cf22e8f2733e2109568c8562ab2e7cc7b4675c4026b53aef73",
+    "files": {
+      "scenes/alert.tscn": {
+        "sha256": "ac6636afa1d0d436f9501ddb24e01778b4191b9856fa7a68e079d497f9c1d7a6",
+        "size": 2185
+      },
+      "scenes/backpack.tscn": {
+        "sha256": "2cf8df2ad19c789bf541d0300540c0620c17b314a1b3f4cd4be244380ef3cd52",
+        "size": 39962
+      },
+      "scenes/character_create.tscn": {
+        "sha256": "ab6b6f98c6c2d51b6d693cf55392c2623d5b5e6771bfbde10485d6590a65fb92",
+        "size": 7928
+      },
+      "scenes/dialogue.tscn": {
+        "sha256": "a283300efd31ab34430ec8c84e41f2de8fd2139ce836c2bc3caffcc6b83cc1bb",
+        "size": 2877
+      },
+      "scenes/game.tscn": {
+        "sha256": "5d4a317761c86eeb989cc2e3af87f4fed8db0b4648742c6e7f5f1f0697cba90e",
+        "size": 1054
+      },
+      "scenes/interactable.tscn": {
+        "sha256": "0d6f90901fdb65b4d8cbea80c527292042f677f61ebd6822d28e6d4a20ccf74d",
+        "size": 909
+      },
+      "scenes/main_hud.tscn": {
+        "sha256": "4727f31203cac0a9a4e6319682a3640c08e61b1a2d81ec5f62569da10858dfb1",
+        "size": 11208
+      },
+      "scenes/map_select.tscn": {
+        "sha256": "4ae419c756802630d5cbdee303d194a2ea5d4c3656fbb271607134ee681ea63b",
+        "size": 5481
+      },
+      "scenes/maps/map_1.tscn": {
+        "sha256": "fcb7da7d3f3d3f8d75f4ff1fb664c81233eee91c4be022a998e4b0e2e8fd5c9a",
+        "size": 5655
+      },
+      "scenes/maps/map_10.tscn": {
+        "sha256": "837e2dfb56584d3ebc63263257850ea1b438fd4e75792135e2164716af523462",
+        "size": 4849
+      },
+      "scenes/maps/map_12.tscn": {
+        "sha256": "baf7b0cc74c633199be09a800f586d5df08266f6cec1fcd302abee87994c6232",
+        "size": 5655
+      },
+      "scenes/maps/map_13.tscn": {
+        "sha256": "8e1566074f01abcf41d913d83a65d0adbace81aff88c5d38e01f3ac6eaca6a13",
+        "size": 9266
+      },
+      "scenes/maps/map_14.tscn": {
+        "sha256": "83f9fd975312dd9d694b0606aa407f3ee5c71070487f0302e0bed4174e6d17c8",
+        "size": 5921
+      },
+      "scenes/maps/map_15.tscn": {
+        "sha256": "549c92cafbac41a62fe2fbe6460fa976abf8c70b4e340ec1fe73b41aec64671d",
+        "size": 5975
+      },
+      "scenes/maps/map_16.tscn": {
+        "sha256": "d1ec4ebcc226078955f3643b4c284de51d903cdd6bcd1e03f7fe2b122bcbe0f3",
+        "size": 3684
+      },
+      "scenes/maps/map_17.tscn": {
+        "sha256": "3b2f050bbe625885561d6a350ecbbcf1c52be0e2146f2cfeebba198d1c4acabd",
+        "size": 4666
+      },
+      "scenes/maps/map_18.tscn": {
+        "sha256": "d38f6e0fa5f9a3047ae099135249eaed335cbed34e27634ae03a4917c1fd7332",
+        "size": 6606
+      },
+      "scenes/maps/map_19.tscn": {
+        "sha256": "4e0ea7227f99b2e970477c9b72e15b7c39c6f27679a9a9af3c8275d0e0e9ac47",
+        "size": 5506
+      },
+      "scenes/maps/map_2.tscn": {
+        "sha256": "9584004cb2ba237a40ed0dc61011884d89239162d4a6ed1cae3ff679329f9369",
+        "size": 4779
+      },
+      "scenes/maps/map_20.tscn": {
+        "sha256": "717915d602ce9fcaa350d3e4d3bc0866ef0605aaa39e9380f652ff7dd6f85947",
+        "size": 6517
+      },
+      "scenes/maps/map_21.tscn": {
+        "sha256": "07d12d144bc197858f364030f992f6132e59a2389e5bd60bc0d3d6cb33105d5b",
+        "size": 5653
+      },
+      "scenes/maps/map_22.tscn": {
+        "sha256": "3252265bb98b4d2e241ba117c68f81ab0177626a586ec20ff9eb3ffebcdbc875",
+        "size": 4587
+      },
+      "scenes/maps/map_23.tscn": {
+        "sha256": "7947e6403b086b48c60e21a4692bb46561d5359d5659e8411d40f2b44a16b471",
+        "size": 5657
+      },
+      "scenes/maps/map_24.tscn": {
+        "sha256": "21ccb5ef8a61dfe879ad77a281f72059319a81feacb3e3cb1002a9eea46aa52d",
+        "size": 4715
+      },
+      "scenes/maps/map_25.tscn": {
+        "sha256": "57d49f122865f2e671cc4045ec98c1635a9816eef809ba8bead63a33dd1bb362",
+        "size": 6053
+      },
+      "scenes/maps/map_26.tscn": {
+        "sha256": "ce31831a3a5609ffb3c51a6a6ccc7ef4169ff808cc58d54d1f53fc20a46236bb",
+        "size": 4514
+      },
+      "scenes/maps/map_27.tscn": {
+        "sha256": "7ce7bb5ded8911d760030fbda62cb4c89f1048e2c5e49c1179bb5b80bdc18d25",
+        "size": 5138
+      },
+      "scenes/maps/map_28.tscn": {
+        "sha256": "07bb8571f3275695dc5bd71f452b8468aa89d96e92ff2acdc02522143fc9f3d1",
+        "size": 6073
+      },
+      "scenes/maps/map_29.tscn": {
+        "sha256": "c5d203244f79359db9b6ac21fd1e382335f47faec8d0b1b39ec14402c643caa6",
+        "size": 9444
+      },
+      "scenes/maps/map_3.tscn": {
+        "sha256": "7e056534aac27b621865bd8b091adbe2872abc859f296b44fa6cb547cce65dd4",
+        "size": 9532
+      },
+      "scenes/maps/map_30.tscn": {
+        "sha256": "dc85007e402054df8caef076a377fdbe929876a84ba21a55d8980e56aa296f36",
+        "size": 2589
+      },
+      "scenes/maps/map_31.tscn": {
+        "sha256": "c9be24ecbb4cd76ab5f382c925d9fb6a8573bec6bd9b06268f837d0c663b81e9",
+        "size": 4583
+      },
+      "scenes/maps/map_32.tscn": {
+        "sha256": "6431d33938a451189dc78744d27800efdd7e51599e06b639ab9d7e4797e28cfa",
+        "size": 8404
+      },
+      "scenes/maps/map_33.tscn": {
+        "sha256": "c35dc1d7119c9cfec294c58243c295690f800f599548a838db71a6a12a768333",
+        "size": 5662
+      },
+      "scenes/maps/map_34.tscn": {
+        "sha256": "260184b8699f51228afe2044d88f2d7cb6aaab176891e8541b829ac1bab078f3",
+        "size": 4789
+      },
+      "scenes/maps/map_35.tscn": {
+        "sha256": "303ab5805f7bbb893f11ead5612ec1e3b40475f1707c4cb7a2a0e3d9201a42a0",
+        "size": 4601
+      },
+      "scenes/maps/map_36.tscn": {
+        "sha256": "ebba04a7115c9f579a93be3b2611b578761c68056a0a8ab5460fc5dc0ef3107b",
+        "size": 6555
+      },
+      "scenes/maps/map_37.tscn": {
+        "sha256": "99b8e416863c402f8fb7ddd478080cbc572eb9340d1cbe16df9fbe32e1527bf6",
+        "size": 2371
+      },
+      "scenes/maps/map_38.tscn": {
+        "sha256": "d7166bf0a9c31561ffc2fdcc1e8f74754a18f699ee6d1f8c05d7441321441644",
+        "size": 4571
+      },
+      "scenes/maps/map_39.tscn": {
+        "sha256": "174a3d2c9e1de93751cf1380b1c4864dabced867544f2d12ac442707884ca2fc",
+        "size": 4431
+      },
+      "scenes/maps/map_4.tscn": {
+        "sha256": "61290119b57d04382146e7ef05e22dfa05a7208f8dc5fe92e8cc8cea69a1d43c",
+        "size": 7991
+      },
+      "scenes/maps/map_40.tscn": {
+        "sha256": "6b8e0c14a378deacc89d6f519015f52666fdc18498ef488537da57819380bd56",
+        "size": 4427
+      },
+      "scenes/maps/map_45.tscn": {
+        "sha256": "80e1703247cbcc40c088e82cd64d9a76765764432d092882f5930eb77762193e",
+        "size": 2369
+      },
+      "scenes/maps/map_46.tscn": {
+        "sha256": "ec2fb34e7e8aac25a6c1aa7a4f293cdeb608eaf2d25afc67b6b48c6aa4a43e5d",
+        "size": 6077
+      },
+      "scenes/maps/map_47.tscn": {
+        "sha256": "3ca86d0edd291696366563008bf0003ba7688397f7afb89dce441b9e0e9f23e9",
+        "size": 4440
+      },
+      "scenes/maps/map_48.tscn": {
+        "sha256": "afc08e8ad2fc443e6bc0697144c4fdae71b3f399e45af2ab036a042fc48d7edc",
+        "size": 6069
+      },
+      "scenes/maps/map_49.tscn": {
+        "sha256": "e59582c0a3c0bfaf466f53525490815d373b5d17dadb73baa3c88352c8bf51b8",
+        "size": 4826
+      },
+      "scenes/maps/map_5.tscn": {
+        "sha256": "d4fc38354da4f3e7ce63179f636205c64291827ff564c3e4bd0c88e373d68a1a",
+        "size": 4449
+      },
+      "scenes/maps/map_50.tscn": {
+        "sha256": "04aae8fe1d062964a8220df41c7494ae05688b9084872c195e05f0ab4a943f94",
+        "size": 5649
+      },
+      "scenes/maps/map_6.tscn": {
+        "sha256": "4e5ba980e76c991500bb597b5d2bd0233189f0f585808f0d908166c09135ca56",
+        "size": 5272
+      },
+      "scenes/maps/map_7.tscn": {
+        "sha256": "82e5b1bb2b8efb0e1ab4bf936193b6096ea267089cb03e3a601a50836433f0c7",
+        "size": 3031
+      },
+      "scenes/maps/map_8.tscn": {
+        "sha256": "4d6e128beb6e47afe4e3d0d11fc3cd96eee80582354c4a1d1a6cc34185faf8d5",
+        "size": 5233
+      },
+      "scenes/maps/map_9.tscn": {
+        "sha256": "ec8615007d729953fa62b399f04e908112fec59afefefe20f4a7bb5542927ecb",
+        "size": 5558
+      },
+      "scenes/name_entry.tscn": {
+        "sha256": "5ed1187c859b11e878a8443360ef0b6f57bee3f97c7e9179b1d1d6ea78c25c0d",
+        "size": 3590
+      },
+      "scenes/npc.tscn": {
+        "sha256": "fca1585261b400d6e1108d024b95fda74384c4c4922fe67045692a83e2013dd3",
+        "size": 1207
+      },
+      "scenes/npcs/npc_10001.tscn": {
+        "sha256": "b44553a8c8820b057a806c5dd354aaa12a41dc0294a134172acc9371ceba298f",
+        "size": 509
+      },
+      "scenes/npcs/npc_10002.tscn": {
+        "sha256": "ab98935cfbd3592423b2d8df9bb03e592da4e269aa3b7378e2ac34cf6347ab51",
+        "size": 495
+      },
+      "scenes/npcs/npc_10003.tscn": {
+        "sha256": "5ca06ecb3e85ac3ec95c01adec554ca3240e4f2657d3444cf132ef47fa33b2b1",
+        "size": 515
+      },
+      "scenes/npcs/npc_10004.tscn": {
+        "sha256": "4dc8c4cb093945dfae79d77cde96df8cb7953ab7c786334756b1a34f0b52fb8b",
+        "size": 498
+      },
+      "scenes/npcs/npc_10005.tscn": {
+        "sha256": "1434d50bf87b3fbb4eeb63bbf7d1352294c951924fdfc962be6c776605b4f9fe",
+        "size": 503
+      },
+      "scenes/npcs/npc_10006.tscn": {
+        "sha256": "81c32893c512e7aef7e4a897c4ceeba5d9fb52ddee1d3eb3a8cbba484c2d27ef",
+        "size": 507
+      },
+      "scenes/npcs/npc_10009.tscn": {
+        "sha256": "963e278769955e74a42c2fca1554af3cc3bff2ef24014138f12d2cbab4addff1",
+        "size": 503
+      },
+      "scenes/npcs/npc_10010.tscn": {
+        "sha256": "473cee3f0d61594d7ce57ea5d622b7f89a7844952762b2d80021be938e780b32",
+        "size": 503
+      },
+      "scenes/npcs/npc_10011.tscn": {
+        "sha256": "02afc0ec8868ff490746deda472fb7fbc25be3b581d68ec17318a1d93f916e0c",
+        "size": 504
+      },
+      "scenes/npcs/npc_10012.tscn": {
+        "sha256": "a708a63611832c98406a2e64a08a33e70bcc0726c4b277cd8482eb5c6e9f7d7c",
+        "size": 503
+      },
+      "scenes/npcs/npc_10013.tscn": {
+        "sha256": "799f15f6f4463cb36df5b70ef486d3ddd379993c3120da110f2c196fb9fee165",
+        "size": 503
+      },
+      "scenes/npcs/npc_10014.tscn": {
+        "sha256": "7d52632fcecbcf1f76869f4ace23b4f82936cc010925a9433aad15fc67ccb08b",
+        "size": 493
+      },
+      "scenes/npcs/npc_10015.tscn": {
+        "sha256": "04c1f0dba2c43e621391ee03533006190c31bedfb648b51bfc9d6ffb72d2f302",
+        "size": 506
+      },
+      "scenes/npcs/npc_10016.tscn": {
+        "sha256": "7d10ff41be5f6844b0fe464791f8deebf1ec98a266c72cd94910ab2609af07f6",
+        "size": 502
+      },
+      "scenes/npcs/npc_10017.tscn": {
+        "sha256": "e994dd0bbef78a35e245b9b194271dc976edc7eb69b353e285f605164e2eb7ee",
+        "size": 502
+      },
+      "scenes/npcs/npc_10018.tscn": {
+        "sha256": "2824647fae8a790f5e3d270da60a441c290368316b9c7a9e2899d9202fdb4f17",
+        "size": 499
+      },
+      "scenes/npcs/npc_10019.tscn": {
+        "sha256": "420e1d10365bcd65c321df090b9c3cd30088fc063fd41e2468840dd7aad1ec25",
+        "size": 494
+      },
+      "scenes/npcs/npc_10020.tscn": {
+        "sha256": "60d0fe4f898bb4bf871b06315c785c1b3481e769465b20c8c9f01343b0b54576",
+        "size": 498
+      },
+      "scenes/npcs/npc_10022.tscn": {
+        "sha256": "c6d9e31be30af91b8d71c1e7ee00d244793aae15202d529cdf71e68b0de192c9",
+        "size": 491
+      },
+      "scenes/npcs/npc_10044.tscn": {
+        "sha256": "2c6c45c0239174595af2217e0bb44fdf5c215d104e51b692fa5345204e58151a",
+        "size": 506
+      },
+      "scenes/npcs/npc_10045.tscn": {
+        "sha256": "58b003114f1523616dc47cd2fc593c08bc4fe44a5f712eeb8f113781e8763886",
+        "size": 502
+      },
+      "scenes/npcs/npc_10046.tscn": {
+        "sha256": "e98119efb4fa8cad7ef2fa0232256a073de08ecef0deb29a166a5e38e7b9246e",
+        "size": 510
+      },
+      "scenes/npcs/npc_10047.tscn": {
+        "sha256": "a5cce4cc17ca03426ea3a9d39867282bb38ffb948744279e36412e0781bbc91b",
+        "size": 498
+      },
+      "scenes/npcs/npc_10048.tscn": {
+        "sha256": "328f722f1b80c8cbfe9b6378a14edcc71a330483996571cc40a43dc22347a591",
+        "size": 497
+      },
+      "scenes/npcs/npc_10049.tscn": {
+        "sha256": "ce68379afb3714293abf1cf94a5c6db266659e6a0a6d60aef0562718bae94008",
+        "size": 507
+      },
+      "scenes/npcs/npc_10050.tscn": {
+        "sha256": "9bd8b2c44be8df4479074be07982ff62590422696c9289fda629509f3710a5e9",
+        "size": 497
+      },
+      "scenes/npcs/npc_10051.tscn": {
+        "sha256": "9f3bcc4eb13725c50f449bce02bba9b76375c8a25f6c38f3fbc3b1433584a57d",
+        "size": 501
+      },
+      "scenes/npcs/npc_10052.tscn": {
+        "sha256": "7ed1987fd40353c3354f511967e89cb70f9be7c3fd066629ea7050183fdbaf04",
+        "size": 500
+      },
+      "scenes/npcs/npc_10058.tscn": {
+        "sha256": "8f16b89e39c26ae2e54043fa4322b9d71b8cc024c8492894b99fb913a17321f9",
+        "size": 503
+      },
+      "scenes/npcs/npc_10059.tscn": {
+        "sha256": "bb3522cf3ffde707ac2ea51c7d65233cd97887af669ff069f754a23c521e942e",
+        "size": 509
+      },
+      "scenes/npcs/npc_10060.tscn": {
+        "sha256": "848e5275d65cae87326456556e40dc936bd75325f9f60797917aaaa849c5900c",
+        "size": 498
+      },
+      "scenes/npcs/npc_10061.tscn": {
+        "sha256": "245b3c58fc3c7c68adf2f670c321e3346df8c601624d85522a3b2c4aa6fcd379",
+        "size": 517
+      },
+      "scenes/npcs/npc_10062.tscn": {
+        "sha256": "95b7a7be351f4254b11454e6af0812283a012fb2f4df94ebc5f0207df7f5eaed",
+        "size": 499
+      },
+      "scenes/npcs/npc_10063.tscn": {
+        "sha256": "f9fbf5770943c6a0ee844a2ea030233b0e7ae124a7ee5466ab2067f74d981106",
+        "size": 498
+      },
+      "scenes/npcs/npc_10064.tscn": {
+        "sha256": "98e8fcdf2092add3aec4d63c437cf8fe2a0835718d6157478428cf9b56a26c1e",
+        "size": 498
+      },
+      "scenes/npcs/npc_10065.tscn": {
+        "sha256": "25778a1d4b5e66102f6ae101e9b10c4dc856b83d0c9abe372589f025512f331d",
+        "size": 497
+      },
+      "scenes/npcs/npc_10066.tscn": {
+        "sha256": "38c01437acf87d89f5acaae4079cb868aa45013f66d2bea87482c6468274f91b",
+        "size": 500
+      },
+      "scenes/npcs/npc_10067.tscn": {
+        "sha256": "65478ad9fdacc99695418acaebdb3c924dd7eafa26d8dcf53e7f36ab7a34413e",
+        "size": 503
+      },
+      "scenes/npcs/npc_10068.tscn": {
+        "sha256": "8a7946566fe8e0c3641ad4dfb1a98c4b437e4cc30d363492059f9b128c5ca404",
+        "size": 518
+      },
+      "scenes/npcs/npc_10070.tscn": {
+        "sha256": "1e86ab3499f0879fb3fbdf9bd8da4e385e222a968c1dfab9fd8c9ca43aa027c8",
+        "size": 506
+      },
+      "scenes/npcs/npc_10071.tscn": {
+        "sha256": "4e2d98be35b99a1abc7eb69b4a053404b392ce13f6b0c2272ee56c7520a0aa9c",
+        "size": 505
+      },
+      "scenes/npcs/npc_10072.tscn": {
+        "sha256": "8de7d84c7764257512d40a2ce9d5a0650613908290f541843afb400f48966247",
+        "size": 517
+      },
+      "scenes/npcs/npc_10073.tscn": {
+        "sha256": "4bfca9a2fdef5c4f185eced6c46e733a6d6c8a213b15d31c37834eae0eb764e9",
+        "size": 506
+      },
+      "scenes/npcs/npc_10074.tscn": {
+        "sha256": "a74063ac1898dc89fb978c17e4d208665c6f57363e90acbe8b8b3ef5dc33cd78",
+        "size": 495
+      },
+      "scenes/npcs/npc_10075.tscn": {
+        "sha256": "d570a4c320d6797e18e2eed76c773aadbcd2872355249fd552d8b7d7898a966a",
+        "size": 503
+      },
+      "scenes/npcs/npc_10076.tscn": {
+        "sha256": "554f4d7c9308a593b746f1b86b46df37b2a2885e277dda67f26a4d42543e6725",
+        "size": 499
+      },
+      "scenes/npcs/npc_10079.tscn": {
+        "sha256": "e2cdacfb8a7480b44290da586fdf2661007f2ad798f4cd0ecf2b1b5b3b71354c",
+        "size": 501
+      },
+      "scenes/npcs/npc_30001.tscn": {
+        "sha256": "2c139059a474301c9e4e0de90f3b3930c6e3225ecec649c5f5a58d9645e010a6",
+        "size": 497
+      },
+      "scenes/npcs/npc_30025.tscn": {
+        "sha256": "592386b2bba5d69a429b7fd66db9ff48a10933b90c234d7a3b33d1e7fb5fba16",
+        "size": 481
+      },
+      "scenes/npcs/npc_30026.tscn": {
+        "sha256": "94f056dd48c7fcd382c3d10bdc8717b2749217699e35066441f5662c325fe66c",
+        "size": 500
+      },
+      "scenes/npcs/npc_30027.tscn": {
+        "sha256": "e611f37931ed02200cb8fb77609b1ed995f2a37c4abbdfb33860afe6456fa89d",
+        "size": 498
+      },
+      "scenes/pause_menu.tscn": {
+        "sha256": "19c4da1e6cf60a118ea6e8089b3885fb144b0c950146452c4f63f7a6705670d6",
+        "size": 623
+      },
+      "scenes/player.tscn": {
+        "sha256": "9d26c7eabcfda0d3a1285c4589c5c9fb1567a6ed58ef3622785183257a4f7e56",
+        "size": 1719
+      },
+      "scenes/role_info.tscn": {
+        "sha256": "1a3f0084c364d317a72dc7bec133c9faae82df74c389f47ea52558a3ba6724e0",
+        "size": 23010
+      },
+      "scenes/role_select.tscn": {
+        "sha256": "f4c53f1bda5f2faa0b5a07882f6a9877da12e986099ba1cdfd0c99556a364090",
+        "size": 13311
+      },
+      "scenes/start_page.tscn": {
+        "sha256": "61e16a333c89e9c6aa9e2371286676e13ac1f08780ad4b4a3ca194a0995e80b2",
+        "size": 393
+      },
+      "scenes/training_ground.tscn": {
+        "sha256": "4e3fed5d2ce916479c5d0fa37121a1fd019ceaa6dc960a3814091133cb7fbbff",
+        "size": 231
+      },
+      "scenes/wardrobe.tscn": {
+        "sha256": "08231a737e5fa10c7eca21bd121764ddd5b3dc64d173543cc61efcebc5cd3d6b",
+        "size": 21823
+      },
+      "scenes/zone_select.tscn": {
+        "sha256": "7ef31ba7f109c58f5f71dc42dc5a2bddfc7a3197c009727d7d1df04fc6b8b862",
+        "size": 8188
+      },
+      "scripts/activity_entries.gd": {
+        "sha256": "94cc3e66399497f7b6a017b88dccf74f71602aeb8064ffc1d0a98e1a7571b342",
+        "size": 2361
+      },
+      "scripts/activity_host.gd": {
+        "sha256": "75153553fe1c5956675408ec0150f913e2240d72786841106a6910e34fb77ab5",
+        "size": 5131
+      },
+      "scripts/activity_panel_base.gd": {
+        "sha256": "367661b65f4e3f0ab8b516f582279cb9919b6bc58b683d1942170341dd3dcea7",
+        "size": 3209
+      },
+      "scripts/activity_rules.gd": {
+        "sha256": "48ef92af1914d33afecd362e0bc12523883a0b249200f37a2302a11bcd54b5a4",
+        "size": 4537
+      },
+      "scripts/advancement_panel.gd": {
+        "sha256": "848d93d37fabd613c4c6c46810f3039c24cb4f3eb1c3a07b8ea2b4338ebd3adf",
+        "size": 4426
+      },
+      "scripts/advancement_success.gd": {
+        "sha256": "72da7c72a123535e224eeaa27ed8d53f031e4ea847ec4e6abd8e65295d75f554",
+        "size": 2011
+      },
+      "scripts/avatar_preview.gd": {
+        "sha256": "b4f2391cfdbfec99eb5bc19a03c1bdd0b24655840d2c3aca31dcc3baa64bae73",
+        "size": 909
+      },
+      "scripts/avatar_view.gd": {
+        "sha256": "c5e04ff13de05ff8fffc40c2bc3df6b00ae10ea58fa1dc41eadcbeb28f15f260",
+        "size": 7385
+      },
+      "scripts/bit_shop_panel.gd": {
+        "sha256": "2a4c5697a9db57833187089b0c6ab448a8d8657113e390558cfb1d5f61360e13",
+        "size": 4222
+      },
+      "scripts/career_shadow.gd": {
+        "sha256": "255667b4bb2509061d3bcf966c0aabbe58035294514786f2fb680ad66f277651",
+        "size": 2882
+      },
+      "scripts/character_create.gd": {
+        "sha256": "71938b4a099ea68b2f654709b9fdac10a4d73cc66d99a5a03ad2a40f7c30d21d",
+        "size": 1820
+      },
+      "scripts/charge_hud.gd": {
+        "sha256": "38da57055c3b51d3b5ac3e823f51bd08e43fc65636b68e9a0dd3f1697cd2ead1",
+        "size": 4778
+      },
+      "scripts/city_procedure_entry.gd": {
+        "sha256": "625e8c4f910755d390b2e40047bd43b014ce035498fc07f6682b1474a599f541",
+        "size": 1624
+      },
+      "scripts/compound_panel.gd": {
+        "sha256": "9d8035eedf6005029415dc542dadb9b90f9a4c1788a38b00db7af8e748f6513c",
+        "size": 9442
+      },
+      "scripts/control_settings.gd": {
+        "sha256": "68c318447e504a7e1864e1f0da924cd31a2c99587b46fb9559598676b728f2c3",
+        "size": 5506
+      },
+      "scripts/dark_clone.gd": {
+        "sha256": "039cc02a3f0e2ebf35ebb1b341074ac80a01c609cb36bca5f72a1a3d74ae675f",
+        "size": 5468
+      },
+      "scripts/devil_dup_panel.gd": {
+        "sha256": "80ef7b86e7bf10c8e3e5c748463300b39f1bfdc1e38ca8dbf82fbc46d3821b6d",
+        "size": 4533
+      },
+      "scripts/dialogue.gd": {
+        "sha256": "6714ca843e73b7780f54b581a3862a0d7dd354750d820ee7da32853816aed63a",
+        "size": 12902
+      },
+      "scripts/dimension_rift.gd": {
+        "sha256": "665c219a69a52cff6cd554b44e119f01665755ea77c55a71f34cf512618ccefb",
+        "size": 24026
+      },
+      "scripts/dimension_rift_state.gd": {
+        "sha256": "f33f394508af613c233be2fb75baa7c35017230204e21b204d00c81ebad4cc6e",
+        "size": 2515
+      },
+      "scripts/dungeon_map.gd": {
+        "sha256": "835459808d8aaa661f201ae6d0e6888b2c9abd971981ae842c7ccd15bfad1acd",
+        "size": 13483
+      },
+      "scripts/enhance_panel.gd": {
+        "sha256": "608f8f5da1875a3437a0052864b7996b79f7a7e7a813c814989f5930f2848141",
+        "size": 8861
+      },
+      "scripts/equipment_panel.gd": {
+        "sha256": "b0d82822242d8b183492859181c7dbd825325d132354e288769fe97a084d5dfa",
+        "size": 21067
+      },
+      "scripts/flash/action_catalog.gd": {
+        "sha256": "f9b4cc70ee25a80cdfd6e79c9bfcd4bf714dc9122157bfaf99f99a7ad36d8fde",
+        "size": 642
+      },
+      "scripts/flash/action_player.gd": {
+        "sha256": "358a3e17dcf58102704d831f6e1d80a3d7a6f3721033e0cf565f447686bd8150",
+        "size": 6516
+      },
+      "scripts/flash/battle_loading.gd": {
+        "sha256": "4282f59bb66ecd82c1c5f91163d4634aa15b2fe6ffb0048eff11f95cdf80a095",
+        "size": 2938
+      },
+      "scripts/flash/boss_slow_motion.gd": {
+        "sha256": "b3a627703084379a00dec558fda79940401d041c41b6c4f833022efd7d31f685",
+        "size": 737
+      },
+      "scripts/flash/city_decoration.gd": {
+        "sha256": "8373318e97e25d3f7126daaa59d66ffdd497ed0edf4d5429e20bc60aa5c45baa",
+        "size": 4517
+      },
+      "scripts/flash/city_portal.gd": {
+        "sha256": "f934716eaf7b87a1504ff360d7b23b26c1ec100ef0ae0592ab59b26debf90964",
+        "size": 1447
+      },
+      "scripts/flash/combat_evaluation.gd": {
+        "sha256": "41304ee1c38cd31944ba433ab0d59fc135f6fe3bf9cfdba97b84c55c4ea05e56",
+        "size": 2026
+      },
+      "scripts/flash/combat_random.gd": {
+        "sha256": "2485354674769f66c0f9748fff4615bb1d7199c088681c895319bfe87d232672",
+        "size": 257
+      },
+      "scripts/flash/damage_calculator.gd": {
+        "sha256": "923c8fcc16c25c798d07af916c7e6e4ed42b40d335931402e6e3388fd04ec8f3",
+        "size": 2675
+      },
+      "scripts/flash/damage_popup.gd": {
+        "sha256": "76a1e1be9a5e7c0131a6bd7bc008ad75f0774c315899b7b5bbd63f2834b7ed80",
+        "size": 3733
+      },
+      "scripts/flash/dungeon_finish_nav.gd": {
+        "sha256": "850bb8ae58dbd12d929423603e66afe840e62ded49ee27c2fce9fd6110932623",
+        "size": 4295
+      },
+      "scripts/flash/dungeon_loot.gd": {
+        "sha256": "ae3aa8c43fed053e760c69acfd34c4e1424e9657ce9ba706df83b8a93a51d4a4",
+        "size": 10778
+      },
+      "scripts/flash/dungeon_portal.gd": {
+        "sha256": "424300a1fc1a300a9c7f6e6333ebb849b526ccf96f96a4abae1f27d8f6dc7bab",
+        "size": 2625
+      },
+      "scripts/flash/dungeon_radar.gd": {
+        "sha256": "f3e539a25c72412467a0e263d29702648f1c3ced07e2e5e2d749968227a151b7",
+        "size": 8300
+      },
+      "scripts/flash/equipment_effects.gd": {
+        "sha256": "de8e9f6aebe586595c1f6cc0a52d01118846600e3afcca3b71981738c996d0da",
+        "size": 3247
+      },
+      "scripts/flash/equipment_light.gd": {
+        "sha256": "590543d655f7a1db073a9d3276fc16a84a3701aed43fa4217d205445733de670",
+        "size": 243
+      },
+      "scripts/flash/experience_curve.gd": {
+        "sha256": "56256f2d3fc529228ba149ef5d8ecc71a8811dd46c01c67bb5968749beb57ead",
+        "size": 1693
+      },
+      "scripts/flash/frame_timeline.gd": {
+        "sha256": "ac2bf603c32590265e4251dd51e27db605b3531ec2d7cf662fc4ad186c9d9274",
+        "size": 1888
+      },
+      "scripts/flash/game_audio.gd": {
+        "sha256": "d24cf17e2a6ef51605bd66b9d46aa2ff9b2330136fa23ae0b05ca93aff3d2005",
+        "size": 7033
+      },
+      "scripts/flash/hit_combo.gd": {
+        "sha256": "1162f4f0d4e870664ae78c6b4f90999a5a28fa70737e8f88763a03f305d68f94",
+        "size": 3054
+      },
+      "scripts/flash/image_effect.gd": {
+        "sha256": "7420c9575c0f22608788134a23e71014739535a9cc8f21ee4b1f97624794abdd",
+        "size": 2508
+      },
+      "scripts/flash/monster_blood_panel.gd": {
+        "sha256": "809e009b9271fe0badb3a35fe3aa794db0ad40b7d0d81af93313ce2736e568c8",
+        "size": 6297
+      },
+      "scripts/flash/motion_script_player.gd": {
+        "sha256": "f1d0a6d97482c960130ec8272759e0eadd9873c22aa0e8253f58de8abc4e6cf7",
+        "size": 1884
+      },
+      "scripts/flash/scene_camera.gd": {
+        "sha256": "b37472bb8f64120a1a60873a62c75250556d3f32fb549166b3ed6cfabe278747",
+        "size": 2351
+      },
+      "scripts/flash/scene_depth.gd": {
+        "sha256": "f75d1b693c5789c87b5e8ca50975ef2253414a3d4e51d8f70b1daf6e2e9ce673",
+        "size": 395
+      },
+      "scripts/flash/scene_loading.gd": {
+        "sha256": "05ec35cc422c6106cb689eb7b69c680837c0adbd32a24404e27fbe2d4115ed32",
+        "size": 4746
+      },
+      "scripts/flash/script_movement.gd": {
+        "sha256": "5c7d990d2879cb7c5a5d81c3a4e6405579cf704e83a394730a5b0ed9c6b810a3",
+        "size": 1676
+      },
+      "scripts/flash/skill_commands.gd": {
+        "sha256": "d739d21cbd3c666435eb67ee6e54bbf35446a2b599aec77d98e3334003b0d170",
+        "size": 2356
+      },
+      "scripts/flash/skill_interact.gd": {
+        "sha256": "30796155b6217b60fb2dec5b79f7222fe02ce003c3b8f2b4b5fcf051ae6c2911",
+        "size": 29322
+      },
+      "scripts/flash/skill_status.gd": {
+        "sha256": "d105b5a387cc6a02509e1c4d9a5b2f2f51842bd5fa4b0f60e529de57b572017f",
+        "size": 4327
+      },
+      "scripts/flash/special_interact.gd": {
+        "sha256": "55225787c33dcf500fa0e3d9248283f71a0b5252d0910f0be59b63c1efde274e",
+        "size": 15752
+      },
+      "scripts/flash/ui_timeline.gd": {
+        "sha256": "7eb0bb4e1f3d51b1af9b68bc51014b9b7d1dc78c286138dce5113350d8c2f60e",
+        "size": 1250
+      },
+      "scripts/flash/vkey_match.gd": {
+        "sha256": "6c5feb250be9bca4318173bb9a33d0989d94876d2d746ae7202d639d124aa7b6",
+        "size": 2569
+      },
+      "scripts/flash_text_effect.gd": {
+        "sha256": "02e61e2e8c946ce4dc8e1f8da690ee279290e9eaad67ddc0ed5a23477be3845a",
+        "size": 4363
+      },
+      "scripts/flash_text_effects.gd": {
+        "sha256": "2144c81ceb9dcb6a99b26362821417d2d68701f05892ee6be686cafe856a3df8",
+        "size": 3099
+      },
+      "scripts/foot_shadow.gd": {
+        "sha256": "67c35424dd83190f327f525f18072db85edbf7cd1a6da8e8b2b5f2b8173f68ae",
+        "size": 1629
+      },
+      "scripts/game.gd": {
+        "sha256": "0dfc9166194719ee3c30720066d3cb069ee3f6464df71b217bec81ede629f4f7",
+        "size": 117311
+      },
+      "scripts/game_world.gd": {
+        "sha256": "34b8666ae6df24ef4253589cabe2e2d12928cccd00983e036b04b7e13337e3ce",
+        "size": 30646
+      },
+      "scripts/head_entries.gd": {
+        "sha256": "52cb18d3d954f6afd2c61c2904b80fccea12e6293641b834651089eeb7047f1f",
+        "size": 16295
+      },
+      "scripts/hud.gd": {
+        "sha256": "e5ab36e45284d15c8f3ca0f8578d4e806c0973e90cc02f4bc03e239d2c4d56da",
+        "size": 32067
+      },
+      "scripts/hud_progress.gd": {
+        "sha256": "7dd97198e03e252cdbedeceb665a8705f6661cb27297d9234b9b48b7dd938fbd",
+        "size": 2978
+      },
+      "scripts/hud_vitals.gd": {
+        "sha256": "fefc59961f726a5be17934d702a9a1476986d1523dfc841d143289f945b6da97",
+        "size": 3370
+      },
+      "scripts/inlay_panel.gd": {
+        "sha256": "78a067828565a89eddc054cc2198f3ca2841cb9170fdad68b6ece6b22767c300",
+        "size": 15859
+      },
+      "scripts/instructor_ai.gd": {
+        "sha256": "ba7d3ea2b57575a920085cc265b64ae423e85b7b3f5eb3bfb518a2e7c46e7c44",
+        "size": 10658
+      },
+      "scripts/interactable.gd": {
+        "sha256": "eb24321abda250b8845ad0d6cb5a7268f7e7995f5e57699cd6305e63ea0fc793",
+        "size": 227
+      },
+      "scripts/inverse_tunnel_panel.gd": {
+        "sha256": "292f65b222ae557880bc4d7f654a7ed98b557816c745289b07f2237b6fcd7f0d",
+        "size": 13239
+      },
+      "scripts/inverse_tunnel_state.gd": {
+        "sha256": "dea9239a83b7d52b3cf7d8f7ee6988a113967f3305c2911408f3f2f323eb4d93",
+        "size": 5770
+      },
+      "scripts/item_cell.gd": {
+        "sha256": "9fe575994785d220087c0cf7ca239b9f612d571c1633cca6aacb04216a2d870b",
+        "size": 5459
+      },
+      "scripts/item_tip.gd": {
+        "sha256": "26fe53678fecd9189e685a61611f8ece727ef16ad591af0ff9443ddce4b986de",
+        "size": 7189
+      },
+      "scripts/item_tips.gd": {
+        "sha256": "c36473cbb73b41833675031b9d0108c52e91661dab4accef0cb8b1857b13eebc",
+        "size": 2460
+      },
+      "scripts/login_controls.gd": {
+        "sha256": "6c82638991ee61b1bca4af9e58c17df8b2f2106f0f090ff38ecabe494cd38b83",
+        "size": 1049
+      },
+      "scripts/login_movie.gd": {
+        "sha256": "ad8e9644bc82789984efb6fe7808178563fb71ad3b4297529036b028634c76b1",
+        "size": 929
+      },
+      "scripts/machine_upgrade_panel.gd": {
+        "sha256": "721d83a26c62a2bcadbc5e5ea45adca2f8dde1ba2c9b47409fca0264195dbe26",
+        "size": 7139
+      },
+      "scripts/manufacture_panel.gd": {
+        "sha256": "52b4ca93cf2961fbf8eb2622638d271cb7260840cb435449b0ca51b284385aee",
+        "size": 8889
+      },
+      "scripts/map.gd": {
+        "sha256": "2d14982ac3e254b83778e1274571aacebfc1ba57d4b2968ba65ef9007bef27aa",
+        "size": 5599
+      },
+      "scripts/merchant_panel.gd": {
+        "sha256": "c94a352a9650d90ce6913c40cde7f13d47b7ade6719a8697f56429446fc41c75",
+        "size": 3895
+      },
+      "scripts/message_feed.gd": {
+        "sha256": "4ba145d4ebf29b0a5eb942c246beec36ff5dd6c8e19057ad03d0a8cb5660d196",
+        "size": 2885
+      },
+      "scripts/military_panel.gd": {
+        "sha256": "78804987670b64bac792aa2a5b33f274102a7e54f1c61a4b0a90d2bf5bdb6706",
+        "size": 4837
+      },
+      "scripts/mission_panel.gd": {
+        "sha256": "ff5109dbe5945d88b7bee7065e5a98b2c16cdef8282685942b6bdcdc668ccf7f",
+        "size": 10794
+      },
+      "scripts/mission_track.gd": {
+        "sha256": "59c87bd7dac69b47ab146ebd12e72a556f8b02ec4d0e47620dfb91db84b67379",
+        "size": 14518
+      },
+      "scripts/node_pool.gd": {
+        "sha256": "5712abc1de39009f62f3605958a07c7e74f83d795fa24cf6c60f859cb9cf8e03",
+        "size": 1472
+      },
+      "scripts/npc.gd": {
+        "sha256": "441fb83faa5a344c748e0d53a8d38681b4200745fb9b1454098bd6fa8d374f92",
+        "size": 3515
+      },
+      "scripts/online_time.gd": {
+        "sha256": "d1697981025d9148290223a162bb1558501a67fd96386123a665fb12b02c6eb4",
+        "size": 1125
+      },
+      "scripts/opening_actor.gd": {
+        "sha256": "20751920bd53b40aeb2a5c8f1788ec66abdcaa819d3d3c447475aabebcfda67d",
+        "size": 1455
+      },
+      "scripts/opening_guide.gd": {
+        "sha256": "30cc736f1f3bb6148441e11d7968fd5315d7f65539275d4994d3150845207fed",
+        "size": 12373
+      },
+      "scripts/opening_run.gd": {
+        "sha256": "9a9bf902490361999a2e7c38fde891f54749b76c1ad4cc902bd9873e4fd41f2d",
+        "size": 1975
+      },
+      "scripts/pause_menu.gd": {
+        "sha256": "f5229edbcf856f2cf02962e79b56e5edd6c8b7db60bd826833495cb5eb7193f4",
+        "size": 6190
+      },
+      "scripts/pet_actor.gd": {
+        "sha256": "e9073c73407da1bd11f7594ffd7d87f7ac7cd6769cf8786ac617b609841a9f28",
+        "size": 14738
+      },
+      "scripts/pet_avatar.gd": {
+        "sha256": "77b3e11890ff519791773b482b73c2236015f99af34ab5e743774df737616dd0",
+        "size": 3179
+      },
+      "scripts/pet_capture.gd": {
+        "sha256": "3cfe8ff49dc9194a910d071ee2d50aea01ad3128db2b2753a2d6b5ebde78e706",
+        "size": 7866
+      },
+      "scripts/pet_panel.gd": {
+        "sha256": "62bf4eba8ed24c78cc228898c9d56808593114ddd663af05322c8f94c871bd1d",
+        "size": 23252
+      },
+      "scripts/pet_preview.gd": {
+        "sha256": "34d98301d508eec94f782139e3d74f32d47d7d45d359d8831c9561b73ad7e5df",
+        "size": 1885
+      },
+      "scripts/pet_services.gd": {
+        "sha256": "e371350dbebfbd60142106846f968b10c4f6b47806fc2dbd85c0480d28b63599",
+        "size": 4586
+      },
+      "scripts/pet_state.gd": {
+        "sha256": "b5755999ce6c5c3c63fdbeb3f62fb684de97a6a3e4940d8a2121ac2811762d23",
+        "size": 20312
+      },
+      "scripts/pet_super_panel.gd": {
+        "sha256": "d842e05f53a8cc85615804de7be1149d7c4da00a8a3e20cf55380c984b3729c5",
+        "size": 11045
+      },
+      "scripts/player.gd": {
+        "sha256": "d2b0f40ffbc02006e30eb72b9f284990ce33ac2bd1b56dec3de7c5c1cc436817",
+        "size": 16330
+      },
+      "scripts/prop_cell.gd": {
+        "sha256": "f7867b138ae71a11bef96159e711f87784808dede03374f8f9b9edc79151b498",
+        "size": 4152
+      },
+      "scripts/refresh_period.gd": {
+        "sha256": "d7278c36e48ba9b154de07f169ba38710d7f1a181dee8b5f5695f5e38ef67500",
+        "size": 1548
+      },
+      "scripts/regional_map.gd": {
+        "sha256": "6626eff128d771930f8e17f996629fb8538b7409b05a3f48104b7867253eb47c",
+        "size": 3898
+      },
+      "scripts/resolve_panel.gd": {
+        "sha256": "c8bfc4b797f326adff6e6f533855fff784483c26dcbab9eb3d67aa7d13b6d8c1",
+        "size": 11489
+      },
+      "scripts/reward_popup.gd": {
+        "sha256": "facdb8f74be87f2bf08def2617e68a4125aa5427d3bbd5f30c4a20a7b6175ebe",
+        "size": 8984
+      },
+      "scripts/reward_slot.gd": {
+        "sha256": "e66cc7248cfc4df8ed8d0f3daaed861f8614fa08e22e5621f1388dd5489c1c2b",
+        "size": 789
+      },
+      "scripts/reward_tray.gd": {
+        "sha256": "62404918a9d1ca8406dc2d422fdf014d81ed4d1d547c65dd08f7cbbd5ca2cf23",
+        "size": 4739
+      },
+      "scripts/role_properties.gd": {
+        "sha256": "3b24d0b0cccf88978311d26e77da3e1899453faf2a3b3d74e8c98db2190279eb",
+        "size": 6359
+      },
+      "scripts/role_select.gd": {
+        "sha256": "9b0e328ebc8700f049a13ac51c521f9c9430c666c0fbe59eb81d613d6d5dd905",
+        "size": 7516
+      },
+      "scripts/skill_cell.gd": {
+        "sha256": "b15e03eab71cc6519de45dea38536dadb5e5705309031a4a9f589492e0b1be51",
+        "size": 1241
+      },
+      "scripts/skill_drop_area.gd": {
+        "sha256": "ef73d8c96b798a4b310bc0ce550818707f2e83d67320753ab6643858a4560b4a",
+        "size": 803
+      },
+      "scripts/skill_panel.gd": {
+        "sha256": "3343aa9da0ab2d4b41a3b13e8e6e31c3ebcff010f70613f7b0421649ae41bd73",
+        "size": 12417
+      },
+      "scripts/skill_tip.gd": {
+        "sha256": "8bda62232ed8f1c9b34ee1d351a1f707117b632c9111222d6c072127b3631c59",
+        "size": 5292
+      },
+      "scripts/skill_tips.gd": {
+        "sha256": "c84cf14c81937c75c54ef2bf3fbaf76f6cac14d0e0c913747e4326b986bd6223",
+        "size": 2308
+      },
+      "scripts/slice_effect.gd": {
+        "sha256": "ff93db99bc2f1f960f1706e65b5483878594c36cc3b3322a118c47bb6648ee66",
+        "size": 9433
+      },
+      "scripts/slice_loot.gd": {
+        "sha256": "513b28c1c104d679f0078c778f612447616933d8d9b3757fd49b196c227715d1",
+        "size": 3412
+      },
+      "scripts/slice_monster.gd": {
+        "sha256": "31fb3cd1739b423b2ed388b8352f0c454fe07650c4ed5e38253881723e582054",
+        "size": 24936
+      },
+      "scripts/slice_overlay.gd": {
+        "sha256": "843e6f864ef39210b5ff353597c0af21affc7976ecf8df0a5d14d4e4a5585735",
+        "size": 45620
+      },
+      "scripts/slice_run.gd": {
+        "sha256": "0578c5f00a983f70e15671dfcce742b82800f724a486033c709a976eb7b2db3b",
+        "size": 92739
+      },
+      "scripts/social_state.gd": {
+        "sha256": "ec317d6f8077a12df4798da8f99db0845223e88a154b37dac002dac84d6e7b9a",
+        "size": 68324
+      },
+      "scripts/source_modal.gd": {
+        "sha256": "c37ffb9f07da50ae96d9771663209ce5f43e8899c0551cec2f93dfc0603dcb4d",
+        "size": 292
+      },
+      "scripts/source_ui.gd": {
+        "sha256": "5ee6639a497faf4b8330bba3b50029162192a732928467c4787697347934c5f7",
+        "size": 9141
+      },
+      "scripts/star_navigation.gd": {
+        "sha256": "32c0da009b1f41f6b2b77a84a9671b2cad83214d9d319200f651705afb2e06a5",
+        "size": 1205
+      },
+      "scripts/start_page.gd": {
+        "sha256": "e7825d5b0c1e0ffc02e01f4531a555e6a6edd4b038eaad987bfff1b461ad60cc",
+        "size": 2315
+      },
+      "scripts/store_panel.gd": {
+        "sha256": "1af06fcab5215c9b71f0458a79aaaae94fe9fa44caf44c4d09b43a5d8542fc99",
+        "size": 17845
+      },
+      "scripts/texture_cache.gd": {
+        "sha256": "bb72013137ec71dcdad0dee00eb20896803f4a24c9d3d2a490f6cc3fd2068eab",
+        "size": 3830
+      },
+      "scripts/training_countdown.gd": {
+        "sha256": "efb6698a8271e31e275e004614ed7096e896e0bf7db238fc060c9add368190a2",
+        "size": 777
+      },
+      "scripts/training_monster.gd": {
+        "sha256": "d09189d879898076f852ecbb48f55a618eeb7fffc5a0c400fe3de04d9e3057d9",
+        "size": 2865
+      },
+      "scripts/training_player_reaction.gd": {
+        "sha256": "c59f1e68b5250d9f5b7b9be25b083e71ce30aea916f7ca260efe61998d9ecd05",
+        "size": 7220
+      },
+      "scripts/training_run.gd": {
+        "sha256": "39239d4070aa55198fc32bfa6eead7aa4c0ef492721b8e829455910c3acd6600",
+        "size": 17179
+      },
+      "scripts/training_typography.gd": {
+        "sha256": "eeb41f3556f2b56cfcfe127ae250eab00e24341ed459401e34f50105d21a0981",
+        "size": 1434
+      },
+      "scripts/transfer_panel.gd": {
+        "sha256": "8df03b1d86538e88cc1ece55e1d97e7845513fb68c470bf96060dd4ec379e212",
+        "size": 7770
+      },
+      "scripts/treasure_dup_panel.gd": {
+        "sha256": "ecc9ae6ec7a55247fd8ecc1b59c7a6d56d26687e047710a87ff94c0b907d2cd4",
+        "size": 5890
+      },
+      "scripts/uranus_panel.gd": {
+        "sha256": "1913be98efa178a015f0bb12bd0b9dafc6ea1408ca56a925e8f61faa57f21310",
+        "size": 6049
+      },
+      "scripts/wardrobe.gd": {
+        "sha256": "4bd0ee406b166dcc2d15a7de20a308ca66b1f83154b1d3a2d2f2a26cd6431353",
+        "size": 3142
+      },
+      "scripts/warehouse_panel.gd": {
+        "sha256": "26f8e6323dd079f3dedeb872eab9a2e7e3594478397efd53bd9f0eac325cf9c2",
+        "size": 3913
+      },
+      "scripts/wild_pet.gd": {
+        "sha256": "4c99ff14b6d652118a30b6c9520284dc96c7c508494ff32431ffda42bdd31c21",
+        "size": 2831
+      },
+      "scripts/workshop_panel.gd": {
+        "sha256": "22210bfb71546fdb021bb45d494b28774f89034a82202493ca56f2f7831b8717",
+        "size": 39710
+      },
+      "scripts/zone_select.gd": {
+        "sha256": "e79ef1577eab7c0c6f0bea4d7f44ded073584f94b27cd3d42e25d77f7c43e5a5",
+        "size": 474
+      }
+    }
+  }
+}

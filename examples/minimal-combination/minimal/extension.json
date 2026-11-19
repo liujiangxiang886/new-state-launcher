@@ -1,0 +1,17 @@
+{
+  "schema": 3,
+  "id": "me.minimal",
+  "name": "最小扩展 A",
+  "version": "1.0.0",
+  "kind": "extension",
+  "baseline": "jjxf.v1.45",
+  "engine": { "line": "4.6" },
+  "scope": "singleplayer",
+  "description": "最小单包：零补丁、零钩子、零依赖，用于验证包结构能过开发者校验。",
+  "files": [
+    {
+      "source": "mods/me.minimal/README.md",
+      "target": "mods/me.minimal/README.md"
+    }
+  ]
+}

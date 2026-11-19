@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+  启动器 exe 的应用程序清单，由 机甲旋风兼容启动器.spec 的 EXE(manifest=...) 显式指定。
+
+  为什么显式指定而不依赖 PyInstaller 默认值：
+  2026-11-11 排查「扩展包解压失败，文件可能损坏」，根因是深安装目录 +
+  包内 .godot/imported/*.ctex 长哈希名把总路径顶到 MAX_PATH(260)。
+  从 16:44 产物 exe 里提取确认：PyInstaller 6.12 默认注入的清单**已经**
+  带 longPathAware（交接文档里「默认不含」的推断对当前产物不成立）。
+  但默认值会随构建环境 / PyInstaller 版本变化，一旦回退就会静默复发，
+  所以把这份完整清单固化进仓库，构建时强制使用。
+
+  保留 trustInfo / compatibility / Common-Controls 依赖，缺了会让
+  asInvoker 提权行为、Windows 版本协商和 Qt 原生控件外观跟着变。
+-->
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+    <security>
+      <requestedPrivileges>
+        <requestedExecutionLevel level="asInvoker" uiAccess="false"/>
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}"/>
+      <supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>
+      <supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}"/>
+      <supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}"/>
+      <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}"/>
+    </application>
+  </compatibility>
+  <application xmlns="urn:schemas-microsoft-com:asm.v3">
+    <windowsSettings>
+      <longPathAware xmlns="http://schemas.microsoft.com/SMI/2016/WindowsSettings">true</longPathAware>
+    </windowsSettings>
+  </application>
+  <dependency>
+    <dependentAssembly>
+      <assemblyIdentity type="win32" name="Microsoft.Windows.Common-Controls" version="6.0.0.0" processorArchitecture="*" publicKeyToken="6595b64144ccf1df" language="*"/>
+    </dependentAssembly>
+  </dependency>
+</assembly>

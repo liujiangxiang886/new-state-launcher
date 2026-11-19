@@ -1,0 +1,695 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jjxf.local/schemas/extension.v4.schema.json",
+  "title": "机甲旋风扩展协议 v4（v3 + 强制源码声明）",
+  "type": "object",
+  "required": [
+    "schema",
+    "id",
+    "name",
+    "version"
+  ],
+  "definitions": {
+    "expect": {
+      "description": "改动发生前对目标位置的断言。也可直接写一个值，等价于 {\"eq\": 值}（1.45.1 老写法）。",
+      "oneOf": [
+        {
+          "type": [
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        },
+        {
+          "type": "array"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "eq": {
+              "description": "必须等于该值（深度比较）"
+            },
+            "ne": {
+              "description": "必须不等于该值"
+            },
+            "exists": {
+              "type": "boolean",
+              "description": "该位置必须存在 / 必须不存在"
+            },
+            "type": {
+              "enum": [
+                "object",
+                "array",
+                "string",
+                "number",
+                "integer",
+                "boolean",
+                "null"
+              ]
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-fA-F]{64}$",
+              "description": "该节点规范 JSON 文本的 sha256"
+            },
+            "size": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "数组/对象/字符串长度"
+            }
+          },
+          "additionalProperties": true
+        }
+      ]
+    },
+    "overrides": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9._-]{1,63}$"
+      },
+      "description": "显式接管：点名被接管方的扩展 id。三条件之一，另需 requires 含该 id 且本操作带 expect。"
+    },
+    "operation": {
+      "type": "object",
+      "required": [
+        "op"
+      ],
+      "properties": {
+        "op": {
+          "enum": [
+            "add",
+            "remove",
+            "replace",
+            "move",
+            "copy",
+            "test",
+            "merge",
+            "merge_patch",
+            "set"
+          ],
+          "description": "RFC 6902 子集 + merge（merge-patch）；set 等价 replace"
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^/",
+          "description": "JSON Pointer，必须以 / 开头；根为 \"\"（仅 merge_patch 允许省略）"
+        },
+        "value": {},
+        "from": {
+          "type": "string",
+          "description": "move / copy 的源指针"
+        },
+        "expect": {
+          "$ref": "#/definitions/expect"
+        },
+        "overrides": {
+          "$ref": "#/definitions/overrides"
+        },
+        "on_miss": {
+          "enum": [
+            "abort",
+            "warn",
+            "skip"
+          ],
+          "default": "abort",
+          "description": "expect 不成立时：abort 整包不生效 / warn 记提示继续写 / skip 只跳过这一条"
+        }
+      }
+    }
+  },
+  "properties": {
+    "schema": {
+      "const": 4,
+      "description": "协议版本。4 = v3 的全部能力 + **强制 `sources`**；1 由 schema1_map 升格，2/3 原样可读（缺 sources 只提示，不拦）。"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{1,63}$",
+      "description": "全局唯一标识，小写字母数字与 . _ -"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+([.-][0-9A-Za-z.-]+)?$",
+      "description": "语义化版本 x.y.z"
+    },
+    "kind": {
+      "enum": [
+        "extension",
+        "minigame",
+        "theme",
+        "framework"
+      ],
+      "default": "extension",
+      "description": "决定加载波次：framework → extension → theme"
+    },
+    "engine": {
+      "type": "object",
+      "properties": {
+        "line": {
+          "enum": [
+            "4.6",
+            "4.7"
+          ]
+        },
+        "min": {
+          "type": "string"
+        },
+        "max": {
+          "type": "string"
+        }
+      }
+    },
+    "baseline": {
+      "oneOf": [
+        {
+          "type": "string",
+          "description": "别名写法，如 jjxf.v1.45"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "engine": {
+              "type": "object",
+              "properties": {
+                "line": {
+                  "enum": [
+                    "4.6",
+                    "4.7"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "framework": {
+      "type": "string",
+      "description": "要求的框架版本范围，如 >=0.1.4,<0.2.0；不满足应警告而非拒装"
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "default": 50
+    },
+    "author": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "homepage": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "requires": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              }
+            }
+          }
+        ]
+      },
+      "description": "真依赖才写。overrides 点名的 id 必须同时出现在这里。"
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "load_after": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "load_before": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "声明占用的命名空间，防撞车"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sources": {
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "description": "简写：只写源码包名，等价于 {\"name\": 该字符串}"
+        },
+        {
+          "type": "object",
+          "required": [
+            "name"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "description": "源码包文件名，如 sources-4.7.zip"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-fA-F]{64}$",
+              "description": "该源码包的 sha256。必须与本线随包源码一致，否则视为按别的源码打的补丁"
+            },
+            "line": {
+              "type": "string",
+              "description": "该源码属于哪条引擎线（4.6 / 4.7 / custom:<id>），必须与本包安装的线一致"
+            },
+            "used_for": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "可选：说明这份源码用于哪些补丁/钩子，便于排查"
+            }
+          },
+          "additionalProperties": true
+        }
+      ],
+      "description": "**本包用了哪份反解源码**。schema 4 下，只要写了 text_patches 或 method_hooks 就必须声明；缺了装不上（install.no_source / sources.missing）。理由见《扩展打包与发布手册》§3。"
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source",
+          "target"
+        ],
+        "properties": {
+          "source": {
+            "type": "string",
+            "description": "包内路径"
+          },
+          "target": {
+            "type": "string",
+            "description": "游戏内路径（不带 res://）"
+          },
+          "mode": {
+            "enum": [
+              "copy",
+              "patch"
+            ]
+          },
+          "expect": {
+            "type": "object",
+            "properties": {
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-fA-F]{64}$"
+              },
+              "size": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "description": "核对基线里这份原文件确实是这个版本；对不上则该条不生效并提示"
+          },
+          "overrides": {
+            "$ref": "#/definitions/overrides"
+          }
+        }
+      }
+    },
+    "packs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "mount_order": {
+            "type": "integer"
+          },
+          "engine": {
+            "enum": [
+              "4.6",
+              "4.7"
+            ]
+          },
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "role": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "data_patches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "target"
+        ],
+        "properties": {
+          "target": {
+            "type": "string",
+            "description": "游戏内 JSON 路径，如 data/equipment.json"
+          },
+          "operations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/operation"
+            },
+            "description": "正式名。1.45 的 ops 作为别名继续接受。"
+          },
+          "ops": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/operation"
+            },
+            "description": "operations 的别名，老包写法"
+          },
+          "expect": {
+            "type": "object",
+            "description": "对整份 JSON 的断言，键同 expect",
+            "additionalProperties": true
+          },
+          "overrides": {
+            "$ref": "#/definitions/overrides"
+          },
+          "on_test_fail": {
+            "enum": [
+              "abort",
+              "warn",
+              "skip"
+            ],
+            "default": "abort"
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "operations"
+            ]
+          },
+          {
+            "required": [
+              "ops"
+            ]
+          },
+          {
+            "description": "整档写入：既无 operations 也无 ops 时，本补丁视为提供整份 JSON",
+            "required": [
+              "target"
+            ]
+          }
+        ]
+      }
+    },
+    "text_patches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "target",
+          "find",
+          "replace"
+        ],
+        "properties": {
+          "target": {
+            "type": "string"
+          },
+          "find": {
+            "type": "string",
+            "minLength": 1,
+            "description": "定位锚点。两个扩展是否抢同一段文本，比较的就是它。"
+          },
+          "replace": {
+            "type": "string"
+          },
+          "mode": {
+            "enum": [
+              "literal",
+              "regex"
+            ],
+            "default": "literal"
+          },
+          "expect_count": {
+            "type": "integer",
+            "minimum": 0,
+            "default": 1,
+            "description": "期望命中数；0 表示不校验。不符即按 on_test_fail 处理"
+          },
+          "expect_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-fA-F]{64}$"
+          },
+          "expect": {
+            "$ref": "#/definitions/expect"
+          },
+          "overrides": {
+            "$ref": "#/definitions/overrides"
+          },
+          "on_test_fail": {
+            "enum": [
+              "abort",
+              "warn",
+              "skip"
+            ],
+            "default": "abort"
+          }
+        }
+      }
+    },
+    "method_hooks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "target",
+          "method",
+          "phase"
+        ],
+        "properties": {
+          "target": {
+            "type": "string",
+            "description": "脚本路径，如 scripts/game.gd"
+          },
+          "method": {
+            "type": "string"
+          },
+          "phase": {
+            "enum": [
+              "before",
+              "after",
+              "replace"
+            ]
+          },
+          "code": {
+            "type": "string",
+            "description": "插桩代码；也可用 handler 指向回调"
+          },
+          "handler": {
+            "type": "string"
+          },
+          "async": {
+            "type": "boolean",
+            "default": false
+          },
+          "priority": {
+            "type": "integer",
+            "default": 50
+          }
+        }
+      }
+    },
+    "scripts": {
+      "type": "object",
+      "properties": {
+        "entry": {
+          "type": "string",
+          "description": "运行期入口脚本路径"
+        },
+        "members": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "description": "向已有脚本追加成员（schema1 的 script_members）"
+        }
+      }
+    },
+    "scenes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "settings": {
+      "type": "object",
+      "properties": {
+        "project": {
+          "type": "object",
+          "description": "写进 project.godot 的键值"
+        },
+        "window": {
+          "type": "object"
+        }
+      }
+    },
+    "inputs": {
+      "type": "object",
+      "properties": {
+        "actions": {
+          "type": "object",
+          "description": "输入映射；必须由底座自带，挂载包里 project.binary 不生效"
+        }
+      }
+    },
+    "story": {
+      "type": "object",
+      "properties": {
+        "chapters": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "dialogs": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "missions": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "routes": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "movie_bridges": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "mode": {
+          "enum": [
+            "merge",
+            "replace"
+          ],
+          "default": "merge"
+        }
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "minigames": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "scope": {
+      "type": "string"
+    }
+  },
+  "patternProperties": {
+    "^x_[a-z0-9_]+$": {
+      "description": "自定义字段，启动器原样保留、不产生「未识别字段」提示"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "anyOf": [
+          {
+            "required": [
+              "text_patches"
+            ],
+            "properties": {
+              "text_patches": {
+                "minItems": 1
+              }
+            }
+          },
+          {
+            "required": [
+              "method_hooks"
+            ],
+            "properties": {
+              "method_hooks": {
+                "minItems": 1
+              }
+            }
+          }
+        ]
+      },
+      "then": {
+        "required": [
+          "sources"
+        ]
+      }
+    }
+  ]
+}

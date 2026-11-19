@@ -1,0 +1,8 @@
+# 机甲旋风兼容启动器 1.6 · 依赖清单
+# Python 3.13（本机托管版不带 tkinter，GUI 用 PySide6，不需要 tkinter）
+# 安装：pip install -r requirements.txt
+# 说明：以下是 2026-11-04 构建/测试环境实际冻结的版本，可按需放宽下限。
+
+PySide6>=6.12,<7
+pytest>=9.0,<10
+pyinstaller>=6.12,<7

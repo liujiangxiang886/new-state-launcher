@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jjxf.local/schemas/minigames.schema.json",
+  "title": "小游戏注册表（config/minigames.json）",
+  "type": "object",
+  "required": ["schema", "items"],
+  "properties": {
+    "schema": { "const": 1 },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "exe"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[A-Za-z0-9_.\\u4e00-\\u9fff-]{1,64}$" },
+          "name": { "type": "string" },
+          "exe": { "type": "string", "description": "绝对路径" },
+          "args": { "type": "array", "items": { "type": "string" } },
+          "workdir": { "type": "string", "description": "空则用 exe 所在目录" },
+          "env": {
+            "type": "object",
+            "additionalProperties": { "type": "string" },
+            "description": "额外环境变量；在存档隔离的重定向之后应用"
+          },
+          "isolate_save": {
+            "type": "boolean",
+            "default": true,
+            "description": "把 APPDATA/LOCALAPPDATA 指到 profiles/<档案>/minigames/<id>"
+          },
+          "save_dir": { "type": "string", "description": "自定义存档目录；留空走默认隔离路径" },
+          "timeout_sec": {
+            "type": "integer",
+            "minimum": 0,
+            "default": 0,
+            "description": "0 表示不限时；到点先 terminate，5 秒后 kill"
+          },
+          "tags": { "type": "array", "items": { "type": "string" } },
+          "note": { "type": "string" },
+          "added_at": { "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$comment": "schema 1 → 2 的字段映射。既是文档，也被 app/core/ext/manifest.py 的 SCHEMA1_MAP 引用（两侧必须一致，由 tests/test_schema1_compat.py 校验）。",
+  "schema": 1,
+  "target": 2,
+  "baseline_alias": {
+    "jjxf.v1.45.original": { "id": "jjxf.v1.45", "engine_line": "4.6" },
+    "jjxf.v1.45": { "id": "jjxf.v1.45", "engine_line": "4.6" },
+    "jjxf.v1.45.original": { "id": "jjxf.v1.45", "engine_line": "4.6" }
+  },
+  "fields": {
+    "schema": {
+      "from": 1,
+      "to": 2,
+      "note": "并写入 x_origin = {schema:1, mapped_by:'schema1_map'}"
+    },
+    "baseline": {
+      "from": "字符串别名",
+      "to": "object{id, engine.line}",
+      "note": "未知别名保留原值并 warning"
+    },
+    "entry": { "from": "顶层", "to": "scripts.entry" },
+    "files[].expect_sha256": { "from": "顶层字符串", "to": "files[].expect.sha256" },
+    "data_patches[].operations": {
+      "from": "operations[]",
+      "to": "ops[]",
+      "value_map": { "set": "replace" }
+    },
+    "text_patches[]": {
+      "defaults": { "mode": "literal", "expect_count": 1 },
+      "note": "schema1 未声明命中数时补 1，宁可严格失败也不要静默不生效"
+    },
+    "script_members": { "from": "顶层数组", "to": "scripts.members" },
+    "project_settings": { "from": "顶层对象", "to": "settings.project" },
+    "input_actions": { "from": "顶层对象", "to": "inputs.actions" },
+    "requires": {
+      "from": "dict{id: range}",
+      "to": "array[{id, version}]"
+    },
+    "method_hooks[]": {
+      "defaults": { "phase": "after", "priority": 50 },
+      "note": "handler 留空由运行期注册；phase 建议以扩展源码里的 add_method_hook 字面量为准"
+    }
+  },
+  "known_issues": [
+    "schema1 的 method_hooks[].phase 常被写成默认 after，而扩展运行期注册的是 before；安装时应扫源码里的 add_method_hook(...) 字面量覆盖它",
+    "覆盖 scripts/x.gd 时必须写自指 remap（导出包只有 x.gdc + x.gd.remap，没有 x.gd）"
+  ]
+}
